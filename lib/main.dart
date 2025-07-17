@@ -473,10 +473,7 @@ class VAutoSpeakAppHomePageState extends State<VAutoSpeakAppHomePage> {
 
                 final newParts = parseCarPartsFromAssistant(resultText);
                 for (var part in newParts) {
-                  final exists = parts.any((existingPart) =>
-                  existingPart.fullName == part.fullName &&
-                      existingPart.totalPrice == part.totalPrice);
-
+                  final exists = parts.any((existingPart) => existingPart.fullName == part.fullName);
                   if (!exists) {
                     print("---> Adding new unique part: ${part.fullName} - ${part.totalPrice}");
                     parts.add(part);
